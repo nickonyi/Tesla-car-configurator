@@ -20,8 +20,12 @@ const exteriorImages = {
   'Solid Black':'./images/model-y-solid-black.jpg',
   'Ulta Red':'./images/model-y-ultra-red.jpg',
   'Quicksilver':'./images/model-y-quicksilver.jpg',
+}
+
+const interiorImages = {
 
 }
+
 //Handle color selection
 const handleColorButtonClick = (event)=> {
   let button;
