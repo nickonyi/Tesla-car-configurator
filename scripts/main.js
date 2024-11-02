@@ -23,7 +23,8 @@ const exteriorImages = {
 }
 
 const interiorImages = {
-
+ Dark:'./images/model-y-interior-dark.jpg',
+ Light:'./images/model-y-interior-light.jpg',
 }
 
 //Handle color selection
