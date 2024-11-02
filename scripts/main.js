@@ -12,6 +12,7 @@ const handleScroll = () => {
   topBar.classList.toggle('hidden-bar',!aTop)  
 }
 
+//image mapping
 //Handle color selection
 const handleColorButtonClick = (event)=> {
   let button;
