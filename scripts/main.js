@@ -14,11 +14,11 @@ const handleScroll = () => {
 
 //image mapping
 const exteriorImages = {
-  'Stealth Grey':'./images/model-y-stealth-grey.jpg',
-  'Pearl White':'./images/model-y-pearl-white.jpg',
-  'Deep Blue':'./images/model-y-deep-blue-metallic.jpg',
-  'Solid Black':'./images/model-y-solid-black.jpg',
-  'Ulta Red':'./images/model-y-ultra-red.jpg',
+  'Stealth grey':'./images/model-y-stealth-grey.jpg',
+  'Pearl white':'./images/model-y-pearl-white.jpg',
+  'Deep blue':'./images/model-y-deep-blue-metallic.jpg',
+  'Solid black':'./images/model-y-solid-black.jpg',
+  'Ultra red':'./images/model-y-ultra-red.jpg',
   'Quicksilver':'./images/model-y-quicksilver.jpg',
 }
 
@@ -40,6 +40,13 @@ const handleColorButtonClick = (event)=> {
     const buttons = event.currentTarget.querySelectorAll('button');
     buttons.forEach((btn) => btn.classList.remove('btn-selected'));
     button.classList.add('btn-selected');
+
+    //change exterior image
+    if(event.currentTarget === exteriorColorSelection){
+      const color = button.querySelector('img').alt; 
+      exteriorImage.src = exteriorImages[color];
+
+    }
   }
   
 }
