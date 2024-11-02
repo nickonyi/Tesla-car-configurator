@@ -13,6 +13,15 @@ const handleScroll = () => {
 }
 
 //image mapping
+const exteriorImages = {
+  'Stealth Grey':'./images/model-y-stealth-grey.jpg',
+  'Pearl White':'./images/model-y-pearl-white.jpg',
+  'Deep Blue':'./images/model-y-deep-blue-metallic.jpg',
+  'Solid Black':'./images/model-y-solid-black.jpg',
+  'Ulta Red':'./images/model-y-ultra-red.jpg',
+  'Quicksilver':'./images/model-y-quicksilver.jpg',
+
+}
 //Handle color selection
 const handleColorButtonClick = (event)=> {
   let button;
