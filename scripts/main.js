@@ -15,7 +15,17 @@ const handleScroll = () => {
 //Handle color selection
 const handleColorButtonClick = (event)=> {
   let button;
-  console.log(event.target);
+  if(event.target.tagName === "IMG"){
+    button = event.target.closest('button');
+  } else if(event.target.tagName === "BUTTON"){
+    button = event.target;
+  }
+
+  if(button){
+    const buttons = event.currentTarget.querySelectorAll('button');
+    buttons.forEach((btn) => btn.classList.remove('btn-selected'));
+    button.classList.add('btn-selected');
+  }
   
 }
 //Event listernors
