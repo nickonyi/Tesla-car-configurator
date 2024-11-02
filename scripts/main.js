@@ -12,5 +12,13 @@ const handleScroll = () => {
   topBar.classList.toggle('hidden-bar',!aTop)  
 }
 
+//Handle color selection
+const handleColorButtonClick = (event)=> {
+  let button;
+  console.log(event.target);
+  
+}
 //Event listernors
-window.addEventListener("scroll",handleScroll);
+window.addEventListener("scroll",()=> requestAnimationFrame(handleScroll));
+exteriorColorSelection.addEventListener("click",handleColorButtonClick);
+interiorColorSelection.addEventListener("click",handleColorButtonClick);
