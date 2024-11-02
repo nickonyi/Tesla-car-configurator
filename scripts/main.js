@@ -3,6 +3,7 @@ const exteriorColorSelection = document.querySelector('#exterior-buttons');
 const interiorColorSelection = document.querySelector('#interior-buttons');
 const exteriorImage = document.querySelector('#exterior-image');
 const interiorImage = document.querySelector('#interior-image');
+const wheelButtonSection = document.querySelector('#wheel-buttons');
 
 
 //Handle top bar scroll
@@ -23,8 +24,8 @@ const exteriorImages = {
 }
 
 const interiorImages = {
- Dark:'./images/model-y-interior-dark.jpg',
- Light:'./images/model-y-interior-light.jpg',
+ dark:'./images/model-y-interior-dark.jpg',
+ light:'./images/model-y-interior-light.jpg',
 }
 
 //Handle color selection
@@ -47,9 +48,18 @@ const handleColorButtonClick = (event)=> {
       exteriorImage.src = exteriorImages[color];
 
     }
+    //change interior image
+    if(event.currentTarget === interiorColorSelection){
+      const color = button.querySelector('img').alt; 
+      interiorImage.src = interiorImages[color];
+
+    }
   }
   
 }
+
+
+//handle wheel selection
 //Event listernors
 window.addEventListener("scroll",()=> requestAnimationFrame(handleScroll));
 exteriorColorSelection.addEventListener("click",handleColorButtonClick);
