@@ -60,7 +60,18 @@ const handleColorButtonClick = (event)=> {
 
 
 //handle wheel selection
+const handleWheelButtonClick = (event) => {
+   if (event.target.tagName === "BUTTON") {
+        const buttons = document.querySelectorAll('#wheel-buttons button');
+        buttons.forEach(btn => btn.classList.remove('bg-gray-700','text-white'));
+
+        //Add selected styles to clicked button
+        event.target.classList.add('bg-gray-700','text-white')
+   }
+}
+
 //Event listernors
 window.addEventListener("scroll",()=> requestAnimationFrame(handleScroll));
 exteriorColorSelection.addEventListener("click",handleColorButtonClick);
 interiorColorSelection.addEventListener("click",handleColorButtonClick);
+wheelButtonSection.addEventListener("click",handleWheelButtonClick)
