@@ -88,6 +88,8 @@ const handleWheelButtonClick = (event) => {
    }
 }
 
+//performance package selection
+
 //Event listernors
 window.addEventListener("scroll",()=> requestAnimationFrame(handleScroll));
 exteriorColorSelection.addEventListener("click",handleColorButtonClick);
