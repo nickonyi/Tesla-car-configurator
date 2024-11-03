@@ -4,6 +4,8 @@ const interiorColorSelection = document.querySelector('#interior-buttons');
 const exteriorImage = document.querySelector('#exterior-image');
 const interiorImage = document.querySelector('#interior-image');
 const wheelButtonSection = document.querySelector('#wheel-buttons');
+const performanceBtn = document.querySelector('#performance-btn');
+
 
 let selectedColor = 'Stealth grey';
 const selectedOptions = {
