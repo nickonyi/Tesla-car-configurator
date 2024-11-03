@@ -7,7 +7,7 @@ const wheelButtonSection = document.querySelector('#wheel-buttons');
 const performanceBtn = document.querySelector('#performance-btn');
 const totalPriceElement = document.querySelector('#total-price');
 
-const basePrice = 60000;
+const basePrice = 52490;
 let currentPrice = basePrice;
 
 
@@ -39,6 +39,11 @@ const updateTotalPrice = () => {
   if (selectedOptions['Performance Wheels']) {
        currentPrice += pricing['Performance Wheels'];
   }
+
+  if (selectedOptions['Performance Package']) {
+    currentPrice += pricing['Performance Package'];
+}
+
 
   //update the total price in UI
   totalPriceElement.textContent =`$${currentPrice.toLocaleString()}`;
@@ -119,8 +124,12 @@ const handleWheelButtonClick = (event) => {
 
 //performance package selection
 const handlePerformanceButtonClick = ()=> {
-   performanceBtn.classList.toggle('bg-gray-700');
+   const isSelected = performanceBtn.classList.toggle('bg-gray-700');
    performanceBtn.classList.toggle('text-white');
+
+   //update selected options
+   selectedOptions['Performance Package'] = isSelected;
+   updateTotalPrice();
 }
 //Event listernors
 window.addEventListener("scroll",()=> requestAnimationFrame(handleScroll));
