@@ -5,6 +5,10 @@ const exteriorImage = document.querySelector('#exterior-image');
 const interiorImage = document.querySelector('#interior-image');
 const wheelButtonSection = document.querySelector('#wheel-buttons');
 const performanceBtn = document.querySelector('#performance-btn');
+const totalPriceElement = document.querySelector('#total-price');
+
+const basePrice = 52490;
+let currentPrice = basePrice;
 
 
 let selectedColor = 'Stealth grey';
@@ -13,6 +17,17 @@ const selectedOptions = {
   'Performance Package':false,
   'Full Self-Driving':false
 
+}
+
+const pricing = {
+  'Performance Wheels':2500,
+  'Performance Package':5000,
+  'Full Self-Driving':8500,
+  'Accessories':{
+    'Center Console Trays':35,
+    'Sunshade':105,
+    'All-weather Interior Liners':225
+  }
 }
 
 
@@ -89,9 +104,13 @@ const handleWheelButtonClick = (event) => {
 }
 
 //performance package selection
-
+const handlePerformanceButtonClick = ()=> {
+   performanceBtn.classList.toggle('bg-gray-700');
+   performanceBtn.classList.toggle('text-white');
+}
 //Event listernors
 window.addEventListener("scroll",()=> requestAnimationFrame(handleScroll));
 exteriorColorSelection.addEventListener("click",handleColorButtonClick);
 interiorColorSelection.addEventListener("click",handleColorButtonClick);
 wheelButtonSection.addEventListener("click",handleWheelButtonClick)
+performanceBtn.addEventListener("click",handlePerformanceButtonClick);
