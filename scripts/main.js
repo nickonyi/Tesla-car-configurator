@@ -7,8 +7,9 @@ const wheelButtonSection = document.querySelector('#wheel-buttons');
 const performanceBtn = document.querySelector('#performance-btn');
 const totalPriceElement = document.querySelector('#total-price');
 
-const basePrice = 52490;
+const basePrice = 60000;
 let currentPrice = basePrice;
+
 
 
 let selectedColor = 'Stealth grey';
@@ -30,6 +31,18 @@ const pricing = {
   }
 }
 
+//update the total price in the UI
+const updateTotalPrice = () => {
+  //reset the current price to base price
+  currentPrice = basePrice;
+
+  if (selectedOptions['Performance Wheels']) {
+       currentPrice += pricing['Performance Wheels'];
+  }
+
+  //update the total price in UI
+  totalPriceElement.textContent =`$${currentPrice.toLocaleString()}`;
+}
 
 //Handle top bar scroll
 const handleScroll = () => {
@@ -55,7 +68,7 @@ const interiorImages = {
 
 //Handle color selection
 const handleColorButtonClick = (event)=> {
-  let button;
+  let button;total-price
   if(event.target.tagName === "IMG"){
     button = event.target.closest('button');
   } else if(event.target.tagName === "BUTTON"){
@@ -100,6 +113,7 @@ const handleWheelButtonClick = (event) => {
 
         selectedOptions['Performance Wheels'] = event.target.textContent.includes('Performance');
         updateExteriorImage();
+        updateTotalPrice();
    }
 }
 
