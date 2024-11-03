@@ -66,7 +66,10 @@ const handleWheelButtonClick = (event) => {
         buttons.forEach(btn => btn.classList.remove('bg-gray-700','text-white'));
 
         //Add selected styles to clicked button
-        event.target.classList.add('bg-gray-700','text-white')
+        event.target.classList.add('bg-gray-700','text-white');
+
+        const selectedWheel = event.target.textContent.includes('Performance');
+        exteriorImage.src = selectedWheel ? "./images/model-y-stealth-grey-performance.jpg":"./images/model-y-stealth-grey.jpg";
    }
 }
 
