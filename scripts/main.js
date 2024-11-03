@@ -5,6 +5,12 @@ const exteriorImage = document.querySelector('#exterior-image');
 const interiorImage = document.querySelector('#interior-image');
 const wheelButtonSection = document.querySelector('#wheel-buttons');
 
+let selectedColor = 'Stealth Grey';
+const selectedOptions = {
+  'Performance Wheels':false,
+  
+}
+
 
 //Handle top bar scroll
 const handleScroll = () => {
