@@ -73,7 +73,7 @@ const interiorImages = {
 
 //Handle color selection
 const handleColorButtonClick = (event)=> {
-  let button;total-price
+  let button;
   if(event.target.tagName === "IMG"){
     button = event.target.closest('button');
   } else if(event.target.tagName === "BUTTON"){
