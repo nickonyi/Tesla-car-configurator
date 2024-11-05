@@ -7,6 +7,7 @@ const wheelButtonSection = document.querySelector('#wheel-buttons');
 const performanceBtn = document.querySelector('#performance-btn');
 const totalPriceElement = document.querySelector('#total-price');
 const fullSelfDrivingCheckBox = document.querySelector('#full-self-driving-checkbox');
+const accessoryCheckBoxes = document.querySelectorAll('.accessory-form-checkbox');
 
 
 
