@@ -52,6 +52,18 @@ if (selectedOptions['Full Self-Driving']) {
     currentPrice += pricing['Full Self-Driving']; 
 }
 
+//accessory checkboxes
+accessoryCheckBoxes.forEach((checkBox) => {
+   //Extract the accessory label
+   const accessoryLabel = checkBox.closest('label').querySelector('span').textContent.trim();
+   const accessoryPrice = pricing['Accessories'][accessoryLabel];
+   //Add the price if accessory is checked
+   if(checkBox.checked){
+    currentPrice += accessoryPrice;
+   }
+   
+})
+
 
   //update the total price in UI
   totalPriceElement.textContent =`$${currentPrice.toLocaleString()}`;
@@ -146,6 +158,12 @@ const fullSelfDrivingChange = () => {
   updateTotalPrice();
 }
 
+//Handle accessory checkboxeslisteners
+accessoryCheckBoxes.forEach((checkBox) => {
+  checkBox.addEventListener("change",()=> {
+    updateTotalPrice();
+  })
+})
 
 
 //Event listernors
