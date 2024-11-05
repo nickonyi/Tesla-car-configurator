@@ -38,13 +38,17 @@ const pricing = {
 const updateTotalPrice = () => {
   //reset the current price to base price
   currentPrice = basePrice;
-
+  //performance wheel option
   if (selectedOptions['Performance Wheels']) {
        currentPrice += pricing['Performance Wheels'];
   }
-
+  //performance package opt
   if (selectedOptions['Performance Package']) {
     currentPrice += pricing['Performance Package'];
+}
+
+if (selectedOptions['Full Self-Driving']) {
+    currentPrice += pricing['Full Self-Driving']; 
 }
 
 
@@ -134,9 +138,19 @@ const handlePerformanceButtonClick = ()=> {
    selectedOptions['Performance Package'] = isSelected;
    updateTotalPrice();
 }
+//full self driving selections 
+const fullSelfDrivingChange = () => {
+  const isSelected = fullSelfDrivingCheckBox.checked;
+  selectedOptions['Full Self-Driving'] = isSelected;
+  updateTotalPrice();
+}
+
+
+
 //Event listernors
 window.addEventListener("scroll",()=> requestAnimationFrame(handleScroll));
 exteriorColorSelection.addEventListener("click",handleColorButtonClick);
 interiorColorSelection.addEventListener("click",handleColorButtonClick);
 wheelButtonSection.addEventListener("click",handleWheelButtonClick)
 performanceBtn.addEventListener("click",handlePerformanceButtonClick);
+fullSelfDrivingCheckBox.addEventListener('change',fullSelfDrivingChange);
