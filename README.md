@@ -42,7 +42,7 @@ Car Model Selection: Choose from different Tesla models.
 ### Installations
 
 Clone the repository:
-- git clone https://github.com/yourusername/tesla-configuration-site.git
+- git clone https://github.com/nickonyi/Tesla-car-configurator.git
 
 Navigate to the project directory:
 - cd tesla-configuration-site
