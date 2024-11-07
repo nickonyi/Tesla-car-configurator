@@ -175,6 +175,8 @@ accessoryCheckBoxes.forEach((checkBox) => {
   })
 })
 
+//Initial update total price
+updateTotalPrice();
 
 //Event listernors
 window.addEventListener("scroll",()=> requestAnimationFrame(handleScroll));
