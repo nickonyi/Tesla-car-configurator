@@ -85,10 +85,10 @@ const updatePaymentBreakdown = () => {
   const loanAmount = currentPrice - downPayment;
   const monthlyInterestRate = interestRate / 12;
 
-  const monthlyPayment = (loanAmount * (monthlyInterestRate * Math.pow(interestRate + 1,loanTermMonths))) /
+  const monthlyPayment = (loanAmount * (monthlyInterestRate * Math.pow(monthlyInterestRate + 1,loanTermMonths))) /
     (Math.pow(1 + monthlyInterestRate,loanTermMonths) - 1);
 
-    monthlyPaymentElement.textContent = `$${monthlyPayment.toLocaleString()}`;
+    monthlyPaymentElement.textContent = `$${monthlyPayment.toFixed(2).toLocaleString()}`;
 }
 
 //Handle top bar scroll
