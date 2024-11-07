@@ -1,6 +1,4 @@
 # Tesla Car Configurator
-
-
 ## Table of contents
 
 - [Overview](#overview)
@@ -44,7 +42,7 @@ Clone the repository:
 - git clone https://github.com/nickonyi/Tesla-car-configurator.git
 
 Navigate to the project directory:
-- cd tesla-configuration-site
+- cd Tesla-Car-Configurator
 
 - Open index.html in your web browser to view the application locally.
 
