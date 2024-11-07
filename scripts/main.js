@@ -8,7 +8,7 @@ const performanceBtn = document.querySelector('#performance-btn');
 const totalPriceElement = document.querySelector('#total-price');
 const fullSelfDrivingCheckBox = document.querySelector('#full-self-driving-checkbox');
 const accessoryCheckBoxes = document.querySelectorAll('.accessory-form-checkbox');
-const downPayment = document.querySelector('#down-payment');
+const downPaymentElement = document.querySelector('#down-payment');
 const monthlyPayment = document.querySelector('#monthly-payment');
 
 
@@ -69,9 +69,15 @@ accessoryCheckBoxes.forEach((checkBox) => {
 
   //update the total price in UI
   totalPriceElement.textContent =`$${currentPrice.toLocaleString()}`;
+  updatePaymentBreakdown();
 }
 
 //update payment breakdown based on the current price
+const updatePaymentBreakdown = () => {
+  //Calculate the down payment
+  const downPayment = currentPrice * 0.1;
+  downPaymentElement.textContent = `$${downPayment.toLocaleString()}`;
+}
 
 //Handle top bar scroll
 const handleScroll = () => {
