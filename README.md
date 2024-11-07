@@ -8,8 +8,7 @@
 - [Installation](#Installation)
   - [Usage](#Usage)
   - [Future Enhancements](#Future-Enhancements)
-  - [Continued development](#continued-development)
-  
+
 ## Overview
 The Tesla Configuration Site is a dynamic web application that allows users to explore and customize various Tesla car models. Users can select car models, add or remove features, view price ranges, and access a price breakdown that includes an estimated payment plan. This site is built with vanilla JavaScript and styled using Tailwind CSS for a modern user interface.
 
