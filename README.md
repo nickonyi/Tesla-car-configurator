@@ -33,7 +33,6 @@ Car Model Selection: Choose from different Tesla models.
 - Vanilla JavaScript
 - Tailwind CSS
 
-**
 
 ### Links
 
