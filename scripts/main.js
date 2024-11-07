@@ -9,7 +9,7 @@ const totalPriceElement = document.querySelector('#total-price');
 const fullSelfDrivingCheckBox = document.querySelector('#full-self-driving-checkbox');
 const accessoryCheckBoxes = document.querySelectorAll('.accessory-form-checkbox');
 const downPaymentElement = document.querySelector('#down-payment');
-const monthlyPayment = document.querySelector('#monthly-payment');
+const monthlyPaymentElement = document.querySelector('#monthly-payment');
 
 
 
@@ -77,6 +77,18 @@ const updatePaymentBreakdown = () => {
   //Calculate the down payment
   const downPayment = currentPrice * 0.1;
   downPaymentElement.textContent = `$${downPayment.toLocaleString()}`;
+
+  //Calculate loan details (assuming 60-month loan and 3% interest rate)
+  const loanTermMonths = 60;
+  const interestRate = 0.03;
+
+  const loanAmount = currentPrice - downPayment;
+  const monthlyInterestRate = interestRate / 12;
+
+  const monthlyPayment = (loanAmount * (monthlyInterestRate * Math.pow(interestRate + 1,loanTermMonths))) /
+    (Math.pow(1 + monthlyInterestRate,loanTermMonths) - 1);
+
+    monthlyPaymentElement.textContent = `$${monthlyPayment.toLocaleString()}`;
 }
 
 //Handle top bar scroll
